@@ -15,7 +15,9 @@ public class NotifyUsersOfLowStockIngredientsTest {
 	public NotifyUsersOfLowStockIngredientsTest(Main main) {
 		this.main = main;
 	}
-	
+
+
+
 	@Given("the system monitors ingredient stock levels")
 	public void the_system_monitors_ingredient_stock_levels() {
 		assert displayAvailableIngredients();

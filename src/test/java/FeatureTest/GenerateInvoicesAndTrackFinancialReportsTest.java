@@ -21,6 +21,9 @@ public class GenerateInvoicesAndTrackFinancialReportsTest {
 	private boolean confirmed;
 
 
+
+
+
 	public GenerateInvoicesAndTrackFinancialReportsTest(Main main) {
 		this.main = main;
 

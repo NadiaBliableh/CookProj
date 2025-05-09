@@ -22,7 +22,9 @@ public class SendRemindersForUpcomingOrdersAndDeliveriesTest {
 	private Main main;
 	private final Customer customer;
 	private final Meal meal;
-	
+
+
+
 	public SendRemindersForUpcomingOrdersAndDeliveriesTest(Main main) {
 		this.main = main;
 		this.customer = new Customer("customer", "custpass");
