@@ -18,7 +18,8 @@ public class AssignedCookingTasks {
 	
 	public static boolean displayAssignedCookingTasks(
 			Specialty specialty, Map<Specialty, Map<Meal, List<Customer>>> specialtyMealMap
-	){
+	)
+	{
 		Map<Meal, List<Customer>> meals = specialtyMealMap.get(specialty);
 		if (meals == null || meals.isEmpty()) {
 			System.out.println("No meals assigned for this specialty: " + specialty);

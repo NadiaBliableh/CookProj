@@ -16,11 +16,13 @@ import java.util.List;
 
 public class GenerateInvoicesAndTrackFinancialReportsTest {
 	private Main main;
+
 	private final Customer customer;
 	private boolean confirmed;
 	
 	public GenerateInvoicesAndTrackFinancialReportsTest(Main main) {
 		this.main = main;
+
 		this.customer = new Customer("customer", "custpass");
 		addCustomer(customer.getUsername(), customer);
 		this.confirmed = false;
@@ -28,6 +30,7 @@ public class GenerateInvoicesAndTrackFinancialReportsTest {
 	
 	@Given("a customer has completed an order")
 	public void a_customer_has_completed_an_order() {
+
 		List<String> ingredients = new ArrayList<>();
 		ingredients.add("Beef");
 		ingredients.add("Cheese");

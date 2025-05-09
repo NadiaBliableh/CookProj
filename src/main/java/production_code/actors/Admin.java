@@ -1,11 +1,13 @@
 package production_code.actors;
 
 public class Admin implements Users {
+
     private String username;
     private String password;
     private boolean loggedIn;
     
     public Admin() {}
+
 
     public Admin(String username, String password) {
         this.username = username;

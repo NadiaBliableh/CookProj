@@ -18,6 +18,8 @@ public class LoginTest {
 	private final Chef chef;
 	private final KitchenManager kitchenManager;
 	private final Customer customer;
+
+
 	private boolean loginResult;
 	private String errorMessage;
 	

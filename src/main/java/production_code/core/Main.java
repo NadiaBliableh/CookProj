@@ -17,6 +17,7 @@ public class Main {
     }
     
     public static boolean systemIsRunning(){
+
         DataLoader.loadAdminMapFromFile(getAdminMap(), ADMIN_FILE_NAME);
         DataLoader.loadKitchenManagerMapFromFile(getKitchenManagerMap(), KITCHEN_MANAGER_FILE_NAME);
         DataLoader.loadChefMapFromFile(getChefMap(), CHEF_FILE_NAME);
@@ -40,9 +41,6 @@ public class Main {
         } if(getIngredientPrice().isEmpty()){
             Ingredients.initializeIngredientPrice();
             saveIngredientPriceToFile(getIngredientPrice(), INGREDIENT_PRICE_FILE_NAME);
-
-
-
         }
         return true;
     }

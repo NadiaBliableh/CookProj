@@ -4,6 +4,7 @@ import production_code.chif_features.MealPlan;
 import java.util.List;
 
 public class Plans {
+
 	public static final MealPlan VEGAN = new MealPlan(
 			"Vegan",
 			"Plant-based meals with no animal products.",

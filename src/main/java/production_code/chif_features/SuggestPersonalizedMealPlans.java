@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public class SuggestPersonalizedMealPlans {
+
 	public static boolean viewCustomerOrderHistory(List<Customer> customers) {
 		System.out.println("+-----+----------------+-------------------------+------------+------------+");
 		System.out.println("| #   | Username        | Meal Name                | Status     | Order Date |");

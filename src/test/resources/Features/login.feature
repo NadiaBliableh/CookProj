@@ -30,3 +30,4 @@ Feature: User Login
   Scenario: Attempt to login with empty fields
     When the user leaves the username and password fields empty
     Then a validation message should be displayed saying "Please enter username and password"
+
