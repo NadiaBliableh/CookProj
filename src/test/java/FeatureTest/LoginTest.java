@@ -23,9 +23,6 @@ public class LoginTest {
 	private boolean loginResult;
 	private String errorMessage;
 
-
-
-
 	public LoginTest(Main main) {
 		this.main = main;
 		this.admin = new Admin("admin", "admin");
