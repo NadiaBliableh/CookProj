@@ -31,3 +31,4 @@ Feature: User Login
     When the user leaves the username and password fields empty
     Then a validation message should be displayed saying "Please enter username and password"
 
+

@@ -8,6 +8,7 @@ Feature: Manage kitchen tasks
   I want to receive notifications about my assigned cooking tasks
   So that I can prepare meals on time
 
+
   Scenario: Assign a task to a chef
     Given a list of chefs with their current workload and expertise
     When the manager selects a task to assign

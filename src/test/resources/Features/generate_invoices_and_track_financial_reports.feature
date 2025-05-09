@@ -11,3 +11,4 @@ Feature: Generate invoices and track financial reports
     When the administrator requests a financial report
     Then the system generates the report
     And the administrator can review revenue and performance
+
