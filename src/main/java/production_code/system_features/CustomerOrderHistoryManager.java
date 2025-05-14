@@ -52,7 +52,6 @@ public class CustomerOrderHistoryManager {
 			}
 		}
 
-
 		if(mealRepetitionCount == null || mealRepetitionCount.isEmpty()){
 			System.out.println("No orders found in history.");
 			return;

@@ -1,7 +1,13 @@
 package production_code.core;
 import production_code.actors.*;
+import production_code.console_mediator.AdminMenu;
+import production_code.console_mediator.ChefMenu;
+import production_code.console_mediator.CustomerMenu;
+import production_code.console_mediator.MahagerMenu;
 import production_code.files_manager.DataLoader;
+import java.util.*;
 
+import java.time.Clock;
 import java.util.Map;
 
 import static production_code.core.Ingredients.*;
@@ -12,11 +18,40 @@ import static production_code.files_manager.FilePaths.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
         systemIsRunning();
+        System.out.println("_____________WELCOME TO OUR SYSTEM____________");
+        System.out.println("Main Menu:");
+        System.out.println("1. Admin");
+        System.out.println("2. Chef ");
+        System.out.println("3. Customer");
+        System.out.println("4. Kitchen Manager ");
+
+        System.out.print("Enter your choice: ");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+
+        switch (choice){
+            case 1:
+                AdminMenu adminMenu = new AdminMenu();
+                adminMenu.showAdminMenu();
+                break;
+            case 2:
+                ChefMenu chefMenu = new ChefMenu();
+                chefMenu.showChefMenu();
+                break;
+            case 3:
+                CustomerMenu customerMenu = new CustomerMenu();
+                customerMenu.showCustomerMenu();
+                break;
+            case 4:
+                MahagerMenu managerMenu = new MahagerMenu();
+                managerMenu.showManagerMenu();
+                break;
+        }
     }
-    
-    public static boolean systemIsRunning(){
+
+    public static boolean systemIsRunning() {
 
         DataLoader.loadAdminMapFromFile(getAdminMap(), ADMIN_FILE_NAME);
         DataLoader.loadKitchenManagerMapFromFile(getKitchenManagerMap(), KITCHEN_MANAGER_FILE_NAME);
@@ -31,20 +66,22 @@ public class Main {
         DataLoader.loadIngredientsFromFile(getIngredients(), INGREDIENTS_FILE_NAME);
         DataLoader.loadAvailableQuantityOfIngredientsFromFile(getAvailableQuantityOfIngredients(), AVAILABLE_QUANTITY_OF_INGREDIENTS_FILE_NAME);
         DataLoader.loadIngredientPriceFromFile(getIngredientPrice(), INGREDIENT_PRICE_FILE_NAME);
-        
-        if(getIngredients().isEmpty()){
+
+        if (getIngredients().isEmpty()) {
             Ingredients.initializeIngredients();
             saveIngredientsToFile(getIngredients(), INGREDIENTS_FILE_NAME);
-        } if(getAvailableQuantityOfIngredients().isEmpty()){
+        }
+        if (getAvailableQuantityOfIngredients().isEmpty()) {
             Ingredients.initializeAvailableQuantityOfIngredients();
             saveAvailableQuantityOfIngredientsToFile(getAvailableQuantityOfIngredients(), AVAILABLE_QUANTITY_OF_INGREDIENTS_FILE_NAME);
-        } if(getIngredientPrice().isEmpty()){
+        }
+        if (getIngredientPrice().isEmpty()) {
             Ingredients.initializeIngredientPrice();
             saveIngredientPriceToFile(getIngredientPrice(), INGREDIENT_PRICE_FILE_NAME);
         }
         return true;
     }
-    
+
     public static <T extends Users> boolean Login(String username, String password, Map<String, T> mapOfUsers) {
         if (mapOfUsers.containsKey(username)) {
             Users user = mapOfUsers.get(username);
@@ -53,13 +90,13 @@ public class Main {
             return false;
         }
     }
-    
+
     public static void register(String username, String password, String accountType) {
-        if(getAdminMap().containsKey(username) ||
-            getKitchenManagerMap().containsKey(username) ||
-            getChefMap().containsKey(username) ||
-            getCustomerMap().containsKey(username)
-        ){
+        if (getAdminMap().containsKey(username) ||
+                getKitchenManagerMap().containsKey(username) ||
+                getChefMap().containsKey(username) ||
+                getCustomerMap().containsKey(username)
+        ) {
             System.out.println("Username already taken!");
         } else {
             switch (accountType) {
@@ -71,7 +108,10 @@ public class Main {
             }
         }
     }
-    
+
+
+
+
     public static void logout() {
         System.out.println("Logging out...");
         saveAdminMapToFile(getAdminMap(), ADMIN_FILE_NAME);
@@ -82,3 +122,7 @@ public class Main {
         saveMealMapToFile(getMealMap(), MEAL_FILE_NAME);
     }
 }
+
+
+
+
