@@ -1,5 +1,5 @@
 package production_code.core;
-import production_code.chif_features.MealPlan;
+import production_code.InventoryManagerfeature.MealPlan;
 
 import java.util.List;
 

@@ -4,8 +4,6 @@ import production_code.actors.Customer;
 import production_code.actors.InventoryManager;
 import production_code.actors.User;
 import production_code.customer_features.CustomerOrderService;
-import production_code.customer_features.PurchaseOrder;
-import production_code.customer_features.RestockSuggestion;
 import production_code.kitchen_manager_features.Task;
 import production_code.kitchen_manager_features.TaskScheduler;
 import production_code.system_features.FinancialReportGenerator;

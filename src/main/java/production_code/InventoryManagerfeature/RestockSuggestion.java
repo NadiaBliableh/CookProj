@@ -1,4 +1,4 @@
-package production_code.customer_features;
+package production_code.InventoryManagerfeature;
 
 
 import production_code.actors.InventoryManager;

@@ -1,4 +1,4 @@
-package production_code.chif_features;
+package production_code.InventoryManagerfeature;
 import java.util.List;
 
 public class MealPlan {
