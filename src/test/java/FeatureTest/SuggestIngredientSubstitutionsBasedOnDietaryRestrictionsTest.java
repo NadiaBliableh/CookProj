@@ -1,62 +1,63 @@
 package FeatureTest;
-import static production_code.chif_features.AssignedCookingTasks.displayAssignedCookingTasks;
-import static production_code.files_manager.DataManager.*;
-import static production_code.kitchen_manager_features.AssignTasksToChefs.assignTasksToChefs;
-import static production_code.system_features.SuggestAlternativeIngredients.suggestAlternativeIngredients;
+
+
 import production_code.actors.Customer;
-import production_code.core.Main;
-import production_code.core.Specialty;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import java.util.List;
 
+import java.util.Arrays;
+
+import static org.junit.Assert.*;
+
+import production_code.core.Mainn;
+
 public class SuggestIngredientSubstitutionsBasedOnDietaryRestrictionsTest {
-	private Main main;
-	private final Customer customer;
-	private String restriction;
-	
-	public SuggestIngredientSubstitutionsBasedOnDietaryRestrictionsTest(Main main) {
-		this.main = main;
-		this.customer = new Customer("customer", "custpass");
-		addCustomer(customer.getUsername(), customer);
+	private Mainn app;
+	private Customer customer;
+	private List<String> suggestions;
+	private String substitutionSuggestion;
+	private String originalIngredient;
+	private String substitutedIngredient;
+	private String alertMessage;
+
+	public SuggestIngredientSubstitutionsBasedOnDietaryRestrictionsTest(Mainn app) {
+		this.app = app;
 	}
-	
-	@Given("the customer has a dietary restriction for {string}")
-	public void the_customer_has_a_dietary_restriction_for(String string) {
-		restriction = string;
-		customer.addAllergy(restriction);
-		assert true;
+
+	@Given("the customer's dietary preference is {string}")
+	public void the_customer_s_dietary_preference_is(String preference) {
+		app.resetLists();
+		customer = new Customer("Test User", preference, Arrays.asList());
+		app.addCustomer(customer);
 	}
-	
-	@Given("the meal contains the ingredient {string}")
-	public void the_meal_contains_the_ingredient(String string) {
-		List<String> alternatives = suggestAlternativeIngredients(string);
-		assert !alternatives.isEmpty();
+
+	@Then("the system should suggest alternative ingredients suitable for {string} preference")
+	public void the_system_should_suggest_alternative_ingredients_suitable_for_preference(String preference) {
+		suggestions = app.suggestMeals(customer);
+		assertFalse("Suggestions should not be empty for " + preference, suggestions.isEmpty());
+		for (String meal : suggestions) {
+			assertTrue("Meal should match preference",
+					preference.equalsIgnoreCase("Vegan") ?
+							!(meal.toLowerCase().contains("meat") || meal.toLowerCase().contains("chicken"))
+							: true);
+		}
 	}
-	
-	@When("the system detects a conflict")
-	public void the_system_detects_a_conflict() {
-		assert customer.getAllergies().contains(restriction);
+
+	@When("the system suggests {string} as a substitution")
+	public void the_system_suggests_as_a_substitution(String suggestion) {
+		substitutionSuggestion = suggestion;
 	}
-	
-	@Then("the system should suggest {string} as an alternative")
-	public void the_system_should_suggest_as_an_alternative(String string) {
-		List<String> alternatives = suggestAlternativeIngredients(string);
-		assert !alternatives.isEmpty();
-	}
-	
-	@Then("notify the chef about the suggested substitution")
-	public void notify_the_chef_about_the_suggested_substitution() {
-		assignTasksToChefs(getChefSpeciality(), getSpecialtyMeals());
-		assert displayAssignedCookingTasks(Specialty.BEEF_DISHES, getSpecialtyMeals());
-	}
-	
-	@Given("the customer has an allergy to {string}")
-	public void the_customer_has_an_allergy_to(String string) {
-		restriction = string;
-		customer.addAllergy(restriction);
-		assert true;
+
+	@Then("the chef should be alerted that a substitution was made for {string} with {string}")
+	public void the_chef_should_be_alerted_that_a_substitution_was_made_for_with(String original, String substitute) {
+		this.originalIngredient = original;
+		this.substitutedIngredient = substitute;
+		alertMessage = app.getSubstitutionAlert(original, substitute);
+		assertNotNull(alertMessage);
+		assertTrue(alertMessage.contains(originalIngredient));
+		assertTrue(alertMessage.contains(substitutedIngredient));
 	}
 }

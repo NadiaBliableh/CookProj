@@ -1,16 +1,24 @@
 Feature: Store dietary preferences and allergies
+    As a customer, I want to input my dietary preferences and allergies
+    so that the system can recommend appropriate meals and prevent unwanted ingredients.
+    As a chef, I want to view customer dietary preferences so that I can customize meals accordingly.
 
-    Customers can save their dietary preferences and allergies so the system can suggest meals accordingly.
-    Chefs can view these preferences to prepare customized meals.
+    Scenario: Customer enters dietary preferences and allergies
+        Given a customer named "Aria"
+        When they input dietary preference as "Vegan"
+        And they input allergy to "Gluten"
+        Then the system should store their preferences and allergies
 
-    Scenario: Customer adds dietary preferences and allergies
-        Given the customer is logged in
-        When the customer enters their dietary preferences as "vegetarian" and allergies as "peanuts"
-        And saves the information
-        Then the system should store the dietary preferences and allergies
-        And confirm that the information was saved successfully
+    Scenario: System recommends meals based on stored dietary data
+        Given a customer named "Aria" with a dietary preference "Vegan" and allergy to "Gluten"
+        When the system suggests meals
+        Then all suggested meals should match the dietary preference "Vegan"
+        And should not contain "Gluten"
+
 
     Scenario: Chef views customer dietary preferences
-        Given the chef is logged in
-        When the chef selects a customer profile
-        Then the system should display the customer's dietary preferences and allergies
+        Given a customer named "Aria" with a dietary preference "Vegan" and allergy to "Peanut"
+        When the chef views Aria's dietary profile
+        Then they should see "Vegan" as the dietary preference
+        And "Peanut" listed under allergies
+

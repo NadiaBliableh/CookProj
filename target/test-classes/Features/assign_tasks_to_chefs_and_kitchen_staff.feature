@@ -1,21 +1,30 @@
-Feature: Manage kitchen tasks
+Feature: Scheduling and Task Management
 
-  As a kitchen manager
+  As a kitchen manager,
   I want to assign tasks to chefs based on their workload and expertise
-  So that I can ensure balanced workloads and efficiency
+  So that I can ensure balanced workloads and efficiency.
 
-  As a chef
+  As a chef,
   I want to receive notifications about my assigned cooking tasks
-  So that I can prepare meals on time
+  So that I can prepare meals on time.
 
+  Background:
+    Given the following chefs are available:
+      | Name    | Expertise      | CurrentTasks |
+      | Alice   | Italian        | 2            |
+      | Bob     | Grilling       | 1            |
+      | Charlie | Baking         | 3            |
 
-  Scenario: Assign a task to a chef
-    Given a list of chefs with their current workload and expertise
-    When the manager selects a task to assign
-    Then the system should assign the task to the most suitable chef
+  Scenario: Assign task to chef with matching expertise and least workload
+    When a new "Italian Pasta" task is created with required expertise "Italian"
+    Then the task should be assigned to "Alice"
+    And Alice's task count should increase by 1
 
-  Scenario: Notify chef about assigned task
-    Given a chef has been assigned a new task
-    When the assignment is confirmed
-    And the chef receives a notification with the task details
-    Then the chef will complete the task
+  Scenario: Assign task to chef with least workload when no expertise match
+    When a new "Vegan Salad" task is created with required expertise "Vegan"
+    Then the task should be assigned to "Bob"
+    And Bob's task count should increase by 1
+
+  Scenario: Chef receives a notification for a new task
+    When a new "Grilled Chicken" task is assigned to "Bob"
+    Then Bob should receive a notification: "You have been assigned a new task: Grilled Chicken"

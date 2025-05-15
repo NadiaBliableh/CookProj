@@ -1,98 +1,122 @@
+
 package FeatureTest;
-import static production_code.chif_features.SuggestPersonalizedMealPlans.suggestMealPlan;
-import static production_code.chif_features.SuggestPersonalizedMealPlans.viewCustomerOrderHistory;
-import static production_code.core.Main.Login;
-import static production_code.files_manager.DataManager.*;
-import static production_code.system_features.CustomerOrderHistoryManager.*;
-
-import production_code.actors.Chef;
-import production_code.actors.Customer;
-import production_code.core.Main;
-import production_code.core.Meal;
-import production_code.core.Specialty;
-import production_code.customer_features.MealOrder;
-import production_code.customer_features.ViewPastMealOrders;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
+import io.cucumber.java.en.Then;
+import production_code.actors.Customer;
 
-import java.time.LocalDateTime;
+import production_code.core.Ingredients;
+import production_code.core.Meal;
+import production_code.core.Order;
+import production_code.core.Invoice;
+import production_code.core.Mainn;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+import java.util.UUID;
+import static org.junit.Assert.*;
+
+
+import java.util.List;
+
+import static org.junit.Assert.*;
 
 public class TrackPastOrdersAndPersonalizedMealPlansTest {
-	private Main main;
-	private final Customer customer;
-	private boolean loginResult;
-	private boolean displayed;
-	
-	public TrackPastOrdersAndPersonalizedMealPlansTest(Main main) {
-		this.main = main;
-		this.customer = new Customer("customer", "custpass");
-		addCustomer(customer.getUsername(), customer);
-		Chef chef = new Chef("chef", "chefpass");
-		addChef(chef.getUsername(), chef);
+	private Mainn app;
+	private Customer customer;
+	private List<String> pastOrders;
+	private List<String> suggestions;
+
+	public TrackPastOrdersAndPersonalizedMealPlansTest(Mainn app) {
+		this.app = app;
 	}
-	
-	@Given("a customer is logged into their account")
-	public void a_customer_is_logged_into_their_account() {
-		loginResult = Login("customer", "custpass", getCustomerMap());
-		assert loginResult;
+
+	@Given("I am a registered customer")
+	public void i_am_a_registered_customer() {
+		app.resetLists();
+		customer = new Customer("John Doe", "Vegan", List.of("Peanuts"));
+		app.addCustomer(customer);
 	}
-	
-	@When("they navigate to the order history section")
-	public void they_navigate_to_the_order_history_section() {
-		List<String> ingredients = new ArrayList<>();
-		ingredients.add("Beef");
-		ingredients.add("Cheese");
-		ingredients.add("Lettuce");
-		
-		Meal meal = new Meal(ingredients, "Beef Meal", Specialty.BEEF_DISHES, 5);
-		addMeal("Beef Meal", meal);
-		MealOrder order = new MealOrder(customer.getUsername(), meal);
-		order.confirmOrder(order, getMealMap(), customer, getChefSpeciality());
-		
-		Map<LocalDateTime, Meal> orderHistory = customer.viewOrderHistory();
-		assert !orderHistory.isEmpty();
+
+	@Given("I have previously ordered meals")
+	public void i_have_previously_ordered_meals() {
+		app.addPastOrder(customer, "Vegan Burger");
+		app.addPastOrder(customer, "Quinoa Salad");
 	}
-	
-	@Then("they should see a list of their past meal orders")
-	public void they_should_see_a_list_of_their_past_meal_orders() {
-		assert ViewPastMealOrders.printOrderHistory(customer);
+
+	@When("I view my past orders")
+	public void i_view_my_past_orders() {
+		pastOrders = customer.getPastOrders();
 	}
-	
-	@Given("a chef is logged into the system")
-	public void a_chef_is_logged_into_the_system() {
-		loginResult = Login("chef", "chefpass", getChefMap());
-		assert loginResult;
+
+	@Then("I should see a list of meals I previously ordered")
+	public void i_should_see_a_list_of_meals_i_previously_ordered() {
+		assertTrue(pastOrders.contains("Vegan Burger"));
+		assertTrue(pastOrders.contains("Quinoa Salad"));
 	}
-	
-	@When("they access a specific customer’s order history")
-	public void they_access_a_specific_customer_s_order_history() {
-		displayed = viewCustomerOrderHistory(new ArrayList<>(List.of(customer)));
+
+	@Then("I should be able to reorder any of them")
+	public void i_should_be_able_to_reorder_any_of_them() {
+		String reorder = app.reorderMeal(customer, "Vegan Burger");
+		assertEquals("Vegan Burger", reorder);
 	}
-	
-	@Then("they should see a list of past meals ordered by the customer")
-	public void they_should_see_a_list_of_past_meals_ordered_by_the_customer() {
-		assert displayed;
+
+	@Given("I am a chef and I have access to customer order history")
+	public void i_am_a_chef_and_i_have_access_to_customer_order_history() {
+		app.resetLists();
+		customer = new Customer("Jane Doe", "Vegan", List.of());
+		app.addCustomer(customer);
+		app.addPastOrder(customer, "Tofu Stir Fry");
+		app.addPastOrder(customer, "Lentil Soup");
 	}
-	
-	@Then("they should be able to suggest personalized meal plans based on the order history")
-	public void they_should_be_able_to_suggest_personalized_meal_plans_based_on_the_order_history() {
-		suggestMealPlan(customer);
+
+	@Given("the customer has previously ordered Vegan meals")
+	public void the_customer_has_previously_ordered_vegan_meals() {
+		assertTrue(customer.getPastOrders().stream().allMatch(meal -> meal.toLowerCase().contains("tofu") || meal.toLowerCase().contains("lentil")));
 	}
-	
-	@Given("the system administrator has access to the order database")
-	public void the_system_administrator_has_access_to_the_order_database() {
-		saveOrderHistory();
+
+	@When("I analyze their past orders")
+	public void i_analyze_their_past_orders() {
+		suggestions = app.suggestMeals(customer);
 	}
-	
-	@And("they should be able to analyze trends to improve service offerings")
-	public void they_should_be_able_to_analyze_trends_to_improve_service_offerings() {
-		calculateTop5MealsOrdered(getMealRepetitionCount(), getCustomersOrders());
-		assert printTop5MealsOrdered(getMealRepetitionCount());
+
+	@Then("I should be able to suggest personalized Vegan meals for the customer")
+	public void i_should_be_able_to_suggest_personalized_vegan_meals_for_the_customer() {
+		assertFalse(suggestions.isEmpty());
+		assertTrue(suggestions.contains("Vegan Salad"));
+	}
+
+	@Given("I am a system administrator")
+	public void i_am_a_system_administrator() {
+		app.resetLists();
+	}
+
+	@Given("customer order history exists in the database")
+	public void customer_order_history_exists_in_the_database() {
+		customer = new Customer("Admin View", "Vegetarian", List.of());
+		app.addCustomer(customer);
+		app.addPastOrder(customer, "Veggie Pasta");
+		app.addPastOrder(customer, "Grilled Vegetables");
+	}
+
+	@When("I retrieve the order history for a customer")
+	public void i_retrieve_the_order_history_for_a_customer() {
+		pastOrders = customer.getPastOrders();
+	}
+
+	@Then("I should see a complete and accurate list of their past meal orders")
+	public void i_should_see_a_complete_and_accurate_list_of_their_past_meal_orders() {
+		assertEquals(2, pastOrders.size());
+		assertTrue(pastOrders.contains("Veggie Pasta"));
+		assertTrue(pastOrders.contains("Grilled Vegetables"));
+	}
+
+	@Then("I should be able to generate reports on order trends")
+	public void i_should_be_able_to_generate_reports_on_order_trends() {
+		String report = app.analyzeMealPreferences(customer);
+		assertNotNull(report);
+		assertTrue(report.contains("trend"));
 	}
 }

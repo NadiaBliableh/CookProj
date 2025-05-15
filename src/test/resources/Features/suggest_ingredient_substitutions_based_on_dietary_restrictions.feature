@@ -1,23 +1,48 @@
-Feature: Ingredient substitution based on dietary restrictions
+Feature: Substitution
 
-  As a customer,
-  I want the system to suggest alternative ingredients,
-  So that I can enjoy my meal without health risks.
+  Scenario: Substitute unavailable ingredient with available alternative
+    Given a customer with dietary preference "Vegan" and allergy "Peanut"
+    And the following ingredients are available:
+      | name         | available |
+      | Lettuce      | true      |
+      | Tomato       | true      |
+      | Chicken      | false     |
+      | Tofu         | true      |
+    When the customer selects the following ingredients for their custom meal:
+      | ingredient   |
+      | Lettuce      |
+      | Tomato       |
+      | Chicken      |
+    Then the system should notify the customer that "Chicken" is currently unavailable
+    And the customer should be asked to choose a different ingredient
 
-  As a chef,
-  I want to be alerted about ingredient substitutions,
-  So that I can approve or adjust the final recipe.
+  Scenario: No substitution available for unavailable ingredient
+    Given a customer with dietary preference "Vegan" and allergy "Peanut"
+    And the following ingredients are available:
+      | name         | available |
+      | Lettuce      | true      |
+      | Tomato       | true      |
+      | Chicken      | false     |
+    When the customer selects the following ingredients for their custom meal:
+      | ingredient   |
+      | Lettuce      |
+      | Tomato       |
+      | Chicken      |
+    Then the system should notify the customer that "Chicken" is currently unavailable
+    And the customer should be asked to choose a different ingredient
 
-  Scenario: Suggest substitution for unavailable ingredient
-    Given the customer has a dietary restriction for "gluten"
-    And the meal contains the ingredient "Nutritional Yeast"
-    When the system detects a conflict
-    Then the system should suggest "Vegan Cheese" as an alternative
-    And notify the chef about the suggested substitution
-
-  Scenario: Suggest substitution for allergic ingredient
-    Given the customer has an allergy to "Vegan"
-    And the meal contains the ingredient "Vegan Butter"
-    When the system detects a conflict
-    Then the system should suggest "Olive Oil" as an alternative
-    And notify the chef about the suggested substitution
+  Scenario: Substitute incompatible ingredient with compatible alternative
+    Given a customer with dietary preference "Vegan" and allergy "Peanut"
+    And the following ingredients are available:
+      | name         | available |
+      | Lettuce      | true      |
+      | Tomato       | true      |
+      | Cheese       | true      |
+      | Tofu         | true      |
+    When the customer selects the following ingredients for their custom meal:
+      | ingredient   |
+      | Lettuce      |
+      | Tomato       |
+      | Cheese       |
+    Then the system should alert the customer that "Cheese" is not compatible with their dietary preference
+    And the customer should be prompted to select a different ingredient

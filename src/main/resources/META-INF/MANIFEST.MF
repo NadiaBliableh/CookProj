@@ -1,2 +1,2 @@
 Manifest-Version: 1.0
-Main-Class: production_code.core.Main
+Main-Class: production_code.core.Menu
