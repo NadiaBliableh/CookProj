@@ -44,11 +44,11 @@ public class Menu {
         Ingredients garlic = new Ingredients("garlic", true);
         app.setAvailableIngredients(Arrays.asList(lettuce, tomatoes, tofu, cheese, chicken, basil, pasta, oliveOil, garlic));
 
-        Customer customer = new Customer("John Doe", "Vegan", List.of("Peanut"));
+        Customer customer = new Customer("John Doe", "basil", List.of("Peanut"));
         app.addCustomer(customer);
-        app.addPastOrder(customer, "Vegan Salad");
+        app.addPastOrder(customer, "basil Salad");
 
-        Chef chef = new Chef("Alice", "Vegan");
+        Chef chef = new Chef("Alice", "basil");
         app.addChef(chef);
         TaskScheduler scheduler = new TaskScheduler();
         app.addTaskScheduler(scheduler);
@@ -369,11 +369,11 @@ public class Menu {
         // Define the recipe database as per the prompt
         List<Recipe> recipes = new ArrayList<>();
         recipes.add(new Recipe("Spaghetti with Tomato Sauce",
-                Arrays.asList("Tomatoes", "pasta", "basil", "olive oil"), 25, "Vegan"));
+                Arrays.asList("Tomatoes", "pasta", "basil", "olive oil"), 25, "basil"));
         recipes.add(new Recipe("Tomato Basil Soup",
-                Arrays.asList("Tomatoes", "basil", "garlic"), 40, "Vegan"));
-        recipes.add(new Recipe("Vegan Pesto Pasta",
-                Arrays.asList("basil", "pasta", "olive oil", "garlic"), 20, "Vegan"));
+                Arrays.asList("Tomatoes", "basil", "garlic"), 40, "basil"));
+        recipes.add(new Recipe("basil Pesto Pasta",
+                Arrays.asList("basil", "pasta", "olive oil", "garlic"), 20, "basil"));
 
         for (Recipe recipe : recipes) {
             if (!recipe.getDietaryRestriction().equalsIgnoreCase(dietaryRestriction)) {
