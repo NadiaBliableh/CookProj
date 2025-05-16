@@ -93,12 +93,12 @@ public class Mainn {
     }
 
     private void initializeRecipes() {
-        recipeList.add(new Recipe("Spaghetti with Tomato Sauce",
-                Arrays.asList("Tomatoes", "pasta", "basil", "olive oil"), 25, "Vegan"));
+        recipeList.add(new Recipe("Quinoa Stuffed Bell Peppers",
+                Arrays.asList("Tomatoes", "pasta", "basil", "olive oil"), 25, "Chickpeas"));
         recipeList.add(new Recipe("Tomato Basil Soup",
-                Arrays.asList("Tomatoes", "basil", "garlic"), 40, "Vegan"));
-        recipeList.add(new Recipe("Vegan Pesto Pasta",
-                Arrays.asList("basil", "pasta", "olive oil", "garlic"), 20, "Vegan"));
+                Arrays.asList("Tomatoes", "basil", "garlic"), 40, "Chickpeas"));
+        recipeList.add(new Recipe("Chickpeas Pesto Pasta",
+                Arrays.asList("basil", "pasta", "olive oil", "garlic"), 20, "Chickpeas"));
     }
 
     // Login-related methods
@@ -485,8 +485,8 @@ public class Mainn {
     public List<String> suggestMeals(Customer profile) {
         if (profile == null) throw new IllegalArgumentException("CustomerProfile cannot be null");
         List<String> suggestedMeals = new ArrayList<>();
-        if (profile.getDietaryPreference().equalsIgnoreCase("Vegan")) {
-            suggestedMeals.add("Vegan Salad");
+        if (profile.getDietaryPreference().equalsIgnoreCase("Chickpeas")) {
+            suggestedMeals.add("Chickpeas Salad");
             suggestedMeals.add("Tofu Stir Fry");
             suggestedMeals.add("Grilled Vegetables");
         }
@@ -494,9 +494,9 @@ public class Mainn {
         if (allergy != null && !allergy.isEmpty()) {
             suggestedMeals.removeIf(meal -> meal.toLowerCase().contains(allergy.toLowerCase()));
         }
-        if (profile.getDietaryPreference().equalsIgnoreCase("Vegan")) {
+        if (profile.getDietaryPreference().equalsIgnoreCase("Chickpeas")) {
             suggestedMeals.removeIf(meal -> meal.toLowerCase().contains("cheese") ||
-                    meal.toLowerCase().contains("milk") ||
+                    meal.toLowerCase().contains("Water") ||
                     meal.toLowerCase().contains("chicken") ||
                     meal.toLowerCase().contains("meat"));
         }
@@ -512,8 +512,8 @@ public class Mainn {
 
     public String alertForIncompatibleIngredient(Customer profile, String ingredient) {
         if (profile == null || ingredient == null) throw new IllegalArgumentException("Profile or ingredient cannot be null");
-        if (profile.getDietaryPreference().equalsIgnoreCase("Vegan") && ingredient.equalsIgnoreCase("cheese")) {
-            System.out.println("Alert: Cheese is not compatible with Vegan dietary preference.");
+        if (profile.getDietaryPreference().equalsIgnoreCase("Chickpeas") && ingredient.equalsIgnoreCase("cheese")) {
+            System.out.println("Alert: Cheese is not compatible with Chickpeas dietary preference.");
             return "Cheese is not compatible with your dietary preference.";
         }
         return "Ingredient is compatible.";
@@ -521,15 +521,15 @@ public class Mainn {
 
     public String analyzeMealPreferences(Customer profile) {
         if (profile == null) throw new IllegalArgumentException("CustomerProfile cannot be null");
-        if (profile.getDietaryPreference().equalsIgnoreCase("Vegan")) {
-            return "Vegan preference trend detected";
+        if (profile.getDietaryPreference().equalsIgnoreCase("Chickpeas")) {
+            return "Chickpeas preference trend detected";
         }
         return "Other preferences trend detected";
     }
 
     public boolean suggestServiceImprovements(Customer profile) {
         if (profile == null) throw new IllegalArgumentException("CustomerProfile cannot be null");
-        return profile.getDietaryPreference().equalsIgnoreCase("Vegan");
+        return profile.getDietaryPreference().equalsIgnoreCase("Chickpeas");
     }
 
     public void addPastOrder(Customer profile, String meal) {
@@ -565,8 +565,8 @@ public class Mainn {
         if (app == null || ingredientName == null || dietaryPreference == null) {
             throw new IllegalArgumentException("Service, ingredientName, or dietaryPreference cannot be null");
         }
-        if ("Vegan".equalsIgnoreCase(dietaryPreference)) {
-            if ("Cheese".equalsIgnoreCase(ingredientName) || "Milk".equalsIgnoreCase(ingredientName) ||
+        if ("Chickpeas".equalsIgnoreCase(dietaryPreference)) {
+            if ("Cheese".equalsIgnoreCase(ingredientName) || "Water".equalsIgnoreCase(ingredientName) ||
                     "Egg".equalsIgnoreCase(ingredientName) || "Peanut Butter".equalsIgnoreCase(ingredientName)) {
                 System.out.println("Alert for " + ingredientName + ": " + ingredientName + " is not compatible with your dietary preference.");
                 return ingredientName + " is not compatible with your dietary preference. Please choose a different ingredient.";
@@ -710,8 +710,8 @@ public class Mainn {
         if (meal == null || dietaryPreference == null) return true;
         for (Ingredients ingredient : meal.getIngredients()) {
             String name = ingredient.getName().toLowerCase();
-            if ("vegan".equalsIgnoreCase(dietaryPreference) &&
-                    (name.equals("cheese") || name.equals("milk") || name.equals("egg") || name.equals("peanut butter"))) {
+            if ("Chickpeas".equalsIgnoreCase(dietaryPreference) &&
+                    (name.equals("cheese") || name.equals("Water") || name.equals("egg") || name.equals("peanut butter"))) {
                 System.out.println("Alert for " + ingredient.getName() + ": " + ingredient.getName() + " is not compatible with your dietary preference.");
                 return false;
             }

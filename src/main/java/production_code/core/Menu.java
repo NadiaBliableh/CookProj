@@ -33,8 +33,8 @@ public class Menu {
         app.registerUser("admin", "Admin1234", "Admin");
 
         // Align ingredient names with MyApplication recipes and LLM prompt
-        Ingredients lettuce = new Ingredients("Lettuce", true);
-        Ingredients tomatoes = new Ingredients("Tomatoes", true);
+        Ingredients lettuce = new Ingredients("Milk", true);
+        Ingredients tomatoes = new Ingredients("Eggs", true);
         Ingredients tofu = new Ingredients("Tofu", true);
         Ingredients cheese = new Ingredients("Cheese", true);
         Ingredients chicken = new Ingredients("Chicken", false);
