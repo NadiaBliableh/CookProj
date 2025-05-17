@@ -33,4 +33,9 @@ jobs:
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B jacoco:prepare-agent verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar jacoco:report -Dsonar.projectKey=softProjNT_softwareProj
+run: mvn -B verify sonar:sonar \
+  -Dsonar.projectKey=softProjNT_softwareProj \
+  -Dsonar.organization=softprojnt \
+  -Dsonar.host.url=https://sonarcloud.io \
+  -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
+  -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml

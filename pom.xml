@@ -96,13 +96,24 @@
                     </execution>
                     <execution>
                         <id>report</id>
-                        <phase>test</phase>
+                        <phase>prepare-package</phase>
                         <goals>
                             <goal>report</goal>
                         </goals>
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.9.1.2184</version>
+            </plugin>
+            sonar.projectKey=Health.System_Cook
+            sonar.organization=your-organization-key
+            sonar.host.url=https://sonarcloud.io
+            sonar.login=your-generated-token
+
+
         </plugins>
     </build>
 
