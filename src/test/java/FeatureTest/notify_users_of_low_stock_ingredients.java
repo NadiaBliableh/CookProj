@@ -1,19 +1,16 @@
 package FeatureTest;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
-//import production_code.actors.core.Ingredient;
-//import production_code.core.Invoice;
+import io.cucumber.datatable.DataTable;
+import production_code.actors.InventoryManager;
 import production_code.core.Mainn;
 
+import java.util.Map;
 import java.util.List;
 
 import static org.junit.Assert.*;
-
-import io.cucumber.datatable.DataTable;
-import production_code.actors.InventoryManager;
-
-import java.util.Map;
 
 public class notify_users_of_low_stock_ingredients {
 	private Mainn app;

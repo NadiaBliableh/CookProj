@@ -1,17 +1,12 @@
 package FeatureTest;
 
-
 import production_code.actors.Customer;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import java.util.List;
-
 import java.util.Arrays;
-
 import static org.junit.Assert.*;
-
 import production_code.core.Mainn;
 
 public class SuggestIngredientSubstitutionsBasedOnDietaryRestrictionsTest {

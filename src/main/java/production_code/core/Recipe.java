@@ -1,14 +1,12 @@
 package production_code.core;
 
-
-
 import java.util.List;
 
 public class Recipe {
-    private String name;
-    private List<String> ingredients;
-    private int preparationTime; // in minutes
-    private String dietaryRestriction;
+    private final String name;
+    private final List<String> ingredients;
+    private final int preparationTime;
+    private final String dietaryRestriction;
 
     public Recipe(String name, List<String> ingredients, int preparationTime, String dietaryRestriction) {
         this.name = name;

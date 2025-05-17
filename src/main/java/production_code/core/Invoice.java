@@ -1,34 +1,93 @@
 package production_code.core;
+
 import production_code.actors.Customer;
-import production_code.core.Meal;
-import production_code.core.Order;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
-public class Invoice {
-	private final UUID invoiceId;
-	private final Customer customer;
-	private final Order order;
-	private final List<Meal> items;
-	private final double totalPrice;
-	private boolean sent;
 
-	public Invoice(Customer customer, Order order, double totalPrice) {
-		this.invoiceId = UUID.randomUUID();
-		this.customer = customer;
+public class Invoice {
+	private final String invoiceId;
+	private final Order order;
+	private boolean sent;
+	private double totalPrice;
+
+
+	public Invoice(Order order) {
+		if (order == null) {
+			throw new IllegalArgumentException("Order cannot be null");
+		}
+		this.invoiceId = UUID.randomUUID().toString();
 		this.order = order;
-		this.items = new ArrayList<>(order.getMeals());
-		this.totalPrice = totalPrice;
 		this.sent = false;
+		this.totalPrice = calculateTotalPrice();
 	}
 
-	public UUID getInvoiceId() { return invoiceId; }
-	public Customer getCustomer() { return customer; }
-	public Order getOrder() { return order; }
-	public List<Meal> getItems() { return new ArrayList<>(items); }
-	public double getTotalPrice() { return totalPrice; }
-	public boolean isSent() { return sent; }
-	public void setSent(boolean sent) { this.sent = sent; }
+	public String getInvoiceId() {
+		return invoiceId;
+	}
+
+	public Order getOrder() {
+		return order;
+	}
+
+	public boolean isSent() {
+		return sent;
+	}
+
+	public void setSent(boolean sent) {
+		this.sent = sent;
+	}
+
+	public double getTotalPrice() {
+		return totalPrice;
+	}
+
+
+	private double calculateTotalPrice() {
+		double total = 0.0;
+		for (Meal meal : order.getMeals()) {
+			total += meal.getIngredients().size() * 5.0; // Charge 5.0 per ingredient
+		}
+		return total;
+	}
+
+
+	public void markAsSent() {
+		this.sent = true;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		Invoice invoice = (Invoice) o;
+		return invoiceId.equals(invoice.invoiceId);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(invoiceId);
+	}
+
+	@Override
+	public String toString() {
+		return "Invoice{invoiceId='" + invoiceId + "', sent=" + sent + ", totalPrice=" + totalPrice + "}";
+	}
+
+
+	public Meal[] getItems() {
+		List<Meal> meals = order.getMeals();
+		if (meals == null) {
+			return new Meal[0];
+		}
+		return meals.toArray(new Meal[0]);
+	}
+
+
+	public Customer getCustomer() {
+		return order.getCustomer();
+	}
 }

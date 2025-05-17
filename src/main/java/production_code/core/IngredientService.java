@@ -1,7 +1,5 @@
 package production_code.core;
 
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,10 +11,14 @@ public class IngredientService {
     }
 
     public List<Ingredients> getAvailableIngredients() {
-        return availableIngredients;
+        return new ArrayList<>(availableIngredients);
     }
 
     public void addIngredient(Ingredients ingredient) {
-        availableIngredients.add(ingredient);
+        if (ingredient != null) availableIngredients.add(ingredient);
+    }
+
+    public boolean isIngredientAvailable(String name) {
+        return availableIngredients.stream().anyMatch(i -> i.getName().equalsIgnoreCase(name) && i.isAvailable());
     }
 }

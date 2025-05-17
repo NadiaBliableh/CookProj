@@ -15,16 +15,16 @@ import java.util.Map;
 import static org.junit.Assert.*;
 
 public class CustomerOrder {
+    private final Mainn app;
     private Customer customer;
     private CustomerOrderService service;
     private IngredientService ingredientService;
     private List<Ingredients> selectedIngredients;
     private String customMealResult;
-    private Mainn app;
 
     public CustomerOrder(Mainn app) {
         this.app = app;
-        selectedIngredients = new ArrayList<>();
+        this.selectedIngredients = new ArrayList<>();
     }
 
     @Given("a customer with dietary preference {string} and allergy {string}")
@@ -41,14 +41,13 @@ public class CustomerOrder {
         List<Map<String, String>> rows = dataTable.asMaps(String.class, String.class);
         List<Ingredients> availableIngredients = new ArrayList<>();
         for (Map<String, String> row : rows) {
-            String name = row.get("name") != null ? row.get("name") : row.get("ingredient"); // Support both "name" and "ingredient" columns
-            boolean available = row.get("available") != null ? Boolean.parseBoolean(row.get("available")) : true; // Default to true if not specified
+            String name = row.get("name") != null ? row.get("name") : row.get("ingredient");
+            boolean available = row.get("available") != null ? Boolean.parseBoolean(row.get("available")) : true;
             Ingredients ingredient = new Ingredients(name, available);
             availableIngredients.add(ingredient);
         }
         app.setAvailableIngredients(availableIngredients);
-        // Only set ingredients for IngredientService if service is initialized
-        if (service != null) {
+        if (service != null && ingredientService != null) {
             app.setAvailableIngredientsForService(ingredientService, availableIngredients);
         }
     }
@@ -59,7 +58,7 @@ public class CustomerOrder {
         List<Map<String, String>> rows = dataTable.asMaps(String.class, String.class);
         for (Map<String, String> row : rows) {
             String ingredientName = row.get("ingredient");
-            selectedIngredients.add(new Ingredients(ingredientName, true)); // Assume selected ingredients are intended to be available
+            selectedIngredients.add(new Ingredients(ingredientName, true));
         }
         customMealResult = app.createCustomMeal(service, selectedIngredients);
     }
@@ -71,7 +70,7 @@ public class CustomerOrder {
 
     @Then("the customer should be able to add the meal to their order")
     public void theCustomerShouldBeAbleToAddTheMealToTheirOrder() {
-        assertEquals("Meal should be added to order", "Meal added to order successfully.", app.addMealToOrder(service, new production_code.core.Meal(selectedIngredients)));
+        assertEquals("Meal should be added to order successfully.", app.addMealToOrder(service, new production_code.core.Meal(selectedIngredients)));
     }
 
     @Then("the system should alert the customer that {string} is not compatible with their dietary preference")

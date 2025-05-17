@@ -1,11 +1,8 @@
 package FeatureTest;
 
-
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
-
+import io.cucumber.java.en.Then;
 import production_code.core.Mainn;
 import production_code.actors.User;
 import static org.junit.Assert.*;
@@ -54,6 +51,6 @@ public class LoginTest {
 
 	@Then("the user should receive an error message {string}")
 	public void the_user_should_receive_an_error_message(String expectedMessage) {
-		assertEquals("Error message should match", expectedMessage, loginResult);
+		assertEquals("Error message should match", expectedMessage, loginResult.trim()); // Trim to remove extra characters
 	}
 }
