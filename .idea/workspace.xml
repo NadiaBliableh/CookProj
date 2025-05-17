@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c4644da3-586a-4a84-9e88-ee35ed5d7950" name="Changes" comment="initial">
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/actors/Users.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/chif_features/AssignedCookingTasks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/chif_features/MealPlan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/chif_features/SuggestPersonalizedMealPlans.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/chif_features/ViewCustomerDietaryPreferences.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/core/Ingredients.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/core/Invoice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/core/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/core/Plans.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/core/Specialty.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/customer_features/EnterDietaryPreferencesAllergies.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/customer_features/MealOrder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/customer_features/MealReminder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/customer_features/SelectIngredients.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/customer_features/ViewPastMealOrders.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/files_manager/DataLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/files_manager/DataManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/files_manager/DataSaver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/files_manager/FilePaths.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/kitchen_manager_features/AssignTasksToChefs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/kitchen_manager_features/IngredientInventoryDisplay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/system_features/CustomerOrderHistoryManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/system_features/FinancialReportGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/production_code/system_features/SuggestAlternativeIngredients.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/FeatureTest/AssignTasksToChefsAndKitchenStaffTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/FeatureTest/GenerateInvoicesAndTrackFinancialReportsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/FeatureTest/LoginTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/FeatureTest/NotifyUsersOfLowStockIngredientsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/FeatureTest/SendRemindersForUpcomingOrdersAndDeliveriesTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/FeatureTest/StoreDietaryPreferencesAndAllergieTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/FeatureTest/SuggestIngredientSubstitutionsBasedOnDietaryRestrictionsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/FeatureTest/TrackPastOrdersAndPersonalizedMealPlansTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Features/assign_tasks_to_chefs_and_kitchen_staff.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Features/generate_invoices_and_track_financial_reports.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Features/notify_users_of_low_stock_ingredients.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Features/send_reminders_for_upcoming_orders_and_deliveries.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Features/store_dietary_preferences_and_allergie.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Features/suggest_ingredient_substitutions_based_on_dietary_restrictions.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/Features/track_past_orders_and_personalized_meal_plans.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserCases/CustomerProfileManagment.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserCases/Ingredient Substitutions_Based_on_Dietary_Restrictions.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserCases/Login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/Features/login.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserCases/Order_and_Menu_Customization.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserCases/Track_Past_Orders_and_Personalized_Meal_Plans.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProductionCode/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/production_code/actors/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProductionCode/Chef.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/production_code/actors/Chef.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProductionCode/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/production_code/actors/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProductionCode/CustomerProfile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProductionCode/CustomerProfileService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProductionCode/IngredientStock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProductionCode/IngredientSubstitutionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProductionCode/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProductionCode/Meal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProductionCode/MealOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/production_code/core/Meal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProductionCode/MealPlan.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProductionCode/TrendsReport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProductionCode/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/production_code/actors/KitchenManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ProductionCode/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FeatureTest/AccTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FeatureTest/AccTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FeatureTest/CustomerProfileManagment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FeatureTest/IngredientSubstitutionSteps.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FeatureTest/MealOrderStepDefinitions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FeatureTest/TrackOrders.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FeatureTest/login.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ProductionCode/Admin.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ProductionCode/Chef.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ProductionCode/Customer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ProductionCode/CustomerProfile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ProductionCode/CustomerProfileService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ProductionCode/IngredientStock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ProductionCode/IngredientSubstitutionService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ProductionCode/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ProductionCode/Meal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ProductionCode/MealOrder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ProductionCode/MealPlan.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ProductionCode/TrendsReport.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ProductionCode/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ProductionCode/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/FeatureTest/AccTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/FeatureTest/AccTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/FeatureTest/CustomerProfileManagment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/FeatureTest/IngredientSubstitutionSteps.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/FeatureTest/MealOrderStepDefinitions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/FeatureTest/TrackOrders.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/FeatureTest/login.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Task" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;tasneemsawalha&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/NadiaBliableh/softwareProj&quot;,
+    &quot;accountId&quot;: &quot;ee6c178a-7609-40b4-a415-26b7b35a49b7&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2tSQgo8ArwfCtA4ygvvgk9CH4kB" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cucumber Java.All Features in: Cook.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.All Features in: UserCases.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: Ingredient Substitutions_Based_on_Dietary_Restrictions.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: Login.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: Order_and_Menu_Customization.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: Track_Past_Orders_and_Personalized_Meal_Plans.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: assign_tasks_to_chefs_and_kitchen_staff.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: feature2.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: generate_invoices_and_track_financial_reports.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: login.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: notify_users_of_low_stock_ingredients.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: send_reminders_for_upcoming_orders_and_deliveries.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: store_dietary_preferences_and_allergie.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: suggest_ingredient_substitutions_based_on_dietary_restrictions.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: track_past_orders_and_personalized_meal_plans.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AccTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in Cook.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FeatureTest in Cook.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.java in Cook.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/DELL/Downloads/Cook1/Cook/src/test/resources/Features&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2321839&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\Downloads\Cook1\Cook\src\test\resources\Features" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\Downloads\Cook1\Cook\src\main\resources\data_files" />
+      <recent name="C:\Users\DELL\Downloads\Cook1\Cook\src\test\resources\Features" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.AccTest">
+    <configuration name="Feature: assign_tasks_to_chefs_and_kitchen_staff" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/assign_tasks_to_chefs_and_kitchen_staff.feature" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="Cook" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: assign_tasks_to_chefs_and_kitchen_staff" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Feature: generate_invoices_and_track_financial_reports" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/generate_invoices_and_track_financial_reports.feature" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="Cook" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: generate_invoices_and_track_financial_reports" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Feature: notify_users_of_low_stock_ingredients" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/notify_users_of_low_stock_ingredients.feature" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="Cook" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: notify_users_of_low_stock_ingredients" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Feature: send_reminders_for_upcoming_orders_and_deliveries" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/Features/send_reminders_for_upcoming_orders_and_deliveries.feature" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="Cook" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: send_reminders_for_upcoming_orders_and_deliveries" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Cook" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="FeatureTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="FeatureTest" />
+      <option name="MAIN_CLASS_NAME" value="FeatureTest.AccTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AccTest" />
+        <item itemvalue="Cucumber Java.Feature: notify_users_of_low_stock_ingredients" />
+        <item itemvalue="Cucumber Java.Feature: send_reminders_for_upcoming_orders_and_deliveries" />
+        <item itemvalue="Cucumber Java.Feature: generate_invoices_and_track_financial_reports" />
+        <item itemvalue="Cucumber Java.Feature: assign_tasks_to_chefs_and_kitchen_staff" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c4644da3-586a-4a84-9e88-ee35ed5d7950" name="Changes" comment="" />
+      <created>1740343109747</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1740343109747</updated>
+    </task>
+    <task id="LOCAL-00001" summary="initial">
+      <option name="closed" value="true" />
+      <created>1744589272942</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1744589272942</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1" />
+    <MESSAGE value="initial" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial" />
+  </component>
+</project>
