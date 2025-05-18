@@ -6,8 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="c4644da3-586a-4a84-9e88-ee35ed5d7950" name="Changes" comment="initial">
       <change beforePath="$PROJECT_DIR$/.github/workflows/main.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FeatureTest/CustomerOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FeatureTest/CustomerOrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FeatureTest/Customer_Invoice_Management.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FeatureTest/Customer_Invoice_ManagementTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FeatureTest/InventorySupplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FeatureTest/InventorySupplierTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FeatureTest/SupplierIntegration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FeatureTest/SupplierIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FeatureTest/assign_tasks_to_chefs_and_kitchen_staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FeatureTest/assign_tasks_to_chefs_and_kitchen_staffTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FeatureTest/notify_users_of_low_stock_ingredients.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FeatureTest/notify_users_of_low_stock_ingredientsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/FeatureTest/send_reminders_for_upcoming_orders_and_deliveries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FeatureTest/send_reminders_for_upcoming_orders_and_deliveriesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,39 +53,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Cucumber Java.All Features in: Cook.executor": "Run",
-    "Cucumber Java.All Features in: UserCases.executor": "Run",
-    "Cucumber Java.Feature: Ingredient Substitutions_Based_on_Dietary_Restrictions.executor": "Run",
-    "Cucumber Java.Feature: Login.executor": "Run",
-    "Cucumber Java.Feature: Order_and_Menu_Customization.executor": "Run",
-    "Cucumber Java.Feature: Track_Past_Orders_and_Personalized_Meal_Plans.executor": "Run",
-    "Cucumber Java.Feature: assign_tasks_to_chefs_and_kitchen_staff.executor": "Run",
-    "Cucumber Java.Feature: feature2.executor": "Run",
-    "Cucumber Java.Feature: generate_invoices_and_track_financial_reports.executor": "Run",
-    "Cucumber Java.Feature: login.executor": "Run",
-    "Cucumber Java.Feature: notify_users_of_low_stock_ingredients.executor": "Run",
-    "Cucumber Java.Feature: send_reminders_for_upcoming_orders_and_deliveries.executor": "Run",
-    "Cucumber Java.Feature: store_dietary_preferences_and_allergie.executor": "Run",
-    "Cucumber Java.Feature: suggest_ingredient_substitutions_based_on_dietary_restrictions.executor": "Run",
-    "Cucumber Java.Feature: track_past_orders_and_personalized_meal_plans.executor": "Run",
-    "JUnit.AccTest.executor": "Run",
-    "JUnit.All in Cook.executor": "Run",
-    "JUnit.FeatureTest in Cook.executor": "Run",
-    "JUnit.java in Cook.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/DELL/Downloads/Cook1/Cook/src/test/resources/Features",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2321839",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cucumber Java.All Features in: Cook.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.All Features in: UserCases.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: Ingredient Substitutions_Based_on_Dietary_Restrictions.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: Login.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: Order_and_Menu_Customization.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: Track_Past_Orders_and_Personalized_Meal_Plans.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: assign_tasks_to_chefs_and_kitchen_staff.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: feature2.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: generate_invoices_and_track_financial_reports.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: login.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: notify_users_of_low_stock_ingredients.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: send_reminders_for_upcoming_orders_and_deliveries.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: store_dietary_preferences_and_allergie.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: suggest_ingredient_substitutions_based_on_dietary_restrictions.executor&quot;: &quot;Run&quot;,
+    &quot;Cucumber Java.Feature: track_past_orders_and_personalized_meal_plans.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AccTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in Cook.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FeatureTest in Cook.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.java in Cook.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/DELL/Downloads/Cook1/Cook/src/test/resources/Features&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2321839&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\DELL\Downloads\Cook1\Cook\src\test\resources\Features" />

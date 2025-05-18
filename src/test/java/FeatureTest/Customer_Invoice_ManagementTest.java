@@ -20,12 +20,12 @@ import static org.junit.jupiter.api.Assertions.*;
 /**
  * Step definitions for managing customer invoices.
  */
-public class Customer_Invoice_Management {
+public class Customer_Invoice_ManagementTest{
     private final Mainn app;
     private Customer customer;
     private Invoice lastInvoice;
 
-    public Customer_Invoice_Management() {
+    public Customer_Invoice_ManagementTest() {
         app = new Mainn();
     }
 

@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 import static org.junit.Assert.*;
 
-public class CustomerOrder {
+public class CustomerOrderTest {
     private final Mainn app;
     private Customer customer;
     private CustomerOrderService service;
@@ -22,7 +22,7 @@ public class CustomerOrder {
     private List<Ingredients> selectedIngredients;
     private String customMealResult;
 
-    public CustomerOrder(Mainn app) {
+    public CustomerOrderTest(Mainn app) {
         this.app = app;
         this.selectedIngredients = new ArrayList<>();
     }

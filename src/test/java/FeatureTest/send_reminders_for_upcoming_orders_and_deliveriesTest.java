@@ -16,11 +16,11 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class send_reminders_for_upcoming_orders_and_deliveries {
+public class send_reminders_for_upcoming_orders_and_deliveriesTest {
     private String lastNotification;
     private Mainn app;
 
-    public send_reminders_for_upcoming_orders_and_deliveries() {
+    public send_reminders_for_upcoming_orders_and_deliveriesTest() {
         app = new Mainn();
     }
 

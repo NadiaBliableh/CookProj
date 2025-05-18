@@ -15,7 +15,7 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class assign_tasks_to_chefs_and_kitchen_staff {
+public class assign_tasks_to_chefs_and_kitchen_staffTest {
     private TaskScheduler scheduler;
     private Task lastAssignedTask;
     private Map<String, Integer> initialTaskCounts;

@@ -12,12 +12,12 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class notify_users_of_low_stock_ingredients {
+public class notify_users_of_low_stock_ingredientsTest {
 	private Mainn app;
 	private InventoryManager inventoryManager;
 	private String lowStockAlert;
 
-	public notify_users_of_low_stock_ingredients() {
+	public notify_users_of_low_stock_ingredientsTest() {
 		app = new Mainn();
 		inventoryManager = new InventoryManager();
 		app.addInventoryManager(inventoryManager);

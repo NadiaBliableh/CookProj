@@ -14,7 +14,7 @@ import java.util.Map;
 
 import static org.junit.Assert.*;
 
-public class SupplierIntegration {
+public class SupplierIntegrationTest {
     private Mainn app;
     private InventoryManager inventoryManager;
     private List<Map<String, String>> lastFetchedPrices;
@@ -23,7 +23,7 @@ public class SupplierIntegration {
     private PurchaseOrder lastPurchaseOrder;
     private String lastNotification;
 
-    public SupplierIntegration(Mainn app) {
+    public SupplierIntegrationTest(Mainn app) {
         this.app = app;
         this.inventoryManager = new InventoryManager();
         this.app.addInventoryManager(inventoryManager);

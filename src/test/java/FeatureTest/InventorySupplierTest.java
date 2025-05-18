@@ -16,14 +16,14 @@ import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class InventorySupplier {
+public class InventorySupplierTest{
     private final Mainn app;
     private InventoryManager inventoryManager;
     private SupplierService supplierService;
     private PurchaseOrder lastPurchaseOrder;
     private String notification;
 
-    public InventorySupplier() {
+    public InventorySupplierTest() {
         this.app = new Mainn();
     }
 
