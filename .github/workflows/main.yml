@@ -34,8 +34,8 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 run: mvn -B verify sonar:sonar \
-  -Dsonar.projectKey=softwareeprotn_softwareProj \
-  -Dsonar.organization=softwareeprotn \
+  -Dsonar.projectKey=softtasn_softwareeprotn \
+  -Dsonar.organization=softtasn \
   -Dsonar.host.url=https://sonarcloud.io \
   -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
   -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml
